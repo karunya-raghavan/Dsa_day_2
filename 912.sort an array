@@ -21,11 +21,5 @@ class Solution {
         mergeSort(arr, mid + 1, high);
 
         // Merge both halves
-        merge(arr, low, mid, high);
-    }
-
-    // Merge two sorted halves
-    private void merge(int[] arr, int low, int mid, int high) {
-
-        int[] temp = new int[high - low + 1];
+     
 
