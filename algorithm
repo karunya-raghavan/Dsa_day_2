@@ -6,11 +6,4 @@ class Solution {
 public:
     vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
         m = board.size(); n = board[0].size();
-        Node* root = new Node();
-        for (auto& w : words) {
-            auto node = root;
-            for (char c : w) {
-                if (!node->ch[c - 'a']) node->ch[c - 'a'] = new Node();
-                node = node->ch[c - 'a'];
-            }
-           
+       
