@@ -1,7 +1,3 @@
 212. Word Search II
-class Solution {
-    
-        board[i][j] = c;
-    }
 
        
