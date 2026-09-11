@@ -3,7 +3,5 @@ class Solution {
     
         board[i][j] = c;
     }
-public:
-    vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
-        m = board.size(); n = board[0].size();
+
        
