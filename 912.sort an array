@@ -1,1 +1,57 @@
+class Solution {
 
+    public int[] sortArray(int[] nums) {
+
+        mergeSort(nums, 0, nums.length - 1);
+        return nums;
+    }
+
+    private void mergeSort(int[] arr, int low, int high) {
+
+        if (low >= high)
+            return;
+
+        // Find mid index
+        int mid = (low + high) / 2;
+
+        // Sort left half
+        mergeSort(arr, low, mid);
+
+        // Sort right half
+        mergeSort(arr, mid + 1, high);
+
+        // Merge both halves
+        merge(arr, low, mid, high);
+    }
+
+    // Merge two sorted halves
+    private void merge(int[] arr, int low, int mid, int high) {
+
+        int[] temp = new int[high - low + 1];
+
+        int left = low;
+        int right = mid + 1;
+        int k = 0;
+
+        // Merge both halves
+        while (left <= mid && right <= high) {
+
+            if (arr[left] <= arr[right])
+                temp[k++] = arr[left++];
+            else
+                temp[k++] = arr[right++];
+        }
+
+        // Remaining left elements
+        while (left <= mid)
+            temp[k++] = arr[left++];
+
+        // Remaining right elements
+        while (right <= high)
+            temp[k++] = arr[right++];
+
+        // Copy back to original array
+        for (int i = 0; i < temp.length; i++)
+            arr[low + i] = temp[i];
+    }
+}
