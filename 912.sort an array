@@ -42,16 +42,3 @@ class Solution {
                 temp[k++] = arr[right++];
         }
 
-        // Remaining left elements
-        while (left <= mid)
-            temp[k++] = arr[left++];
-
-        // Remaining right elements
-        while (right <= high)
-            temp[k++] = arr[right++];
-
-        // Copy back to original array
-        for (int i = 0; i < temp.length; i++)
-            arr[low + i] = temp[i];
-    }
-}
